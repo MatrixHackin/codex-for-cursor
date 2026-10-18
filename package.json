@@ -1,0 +1,15 @@
+{
+  "name": "mycodex",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cursor plugin that delegates tasks to the local Codex CLI.",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check-commands": "node scripts/check-commands.mjs"
+  }
+}

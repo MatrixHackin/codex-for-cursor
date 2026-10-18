@@ -1,0 +1,15 @@
+{
+  "name": "mycodex",
+  "displayName": "MyCodex",
+  "version": "0.1.0",
+  "description": "Delegate tasks to the local Codex CLI from Cursor Agent chat.",
+  "author": {
+    "name": "mycodex"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/MatrixHackin/codex-for-cursor",
+  "repository": "https://github.com/MatrixHackin/codex-for-cursor",
+  "logo": "assets/logo.svg",
+  "keywords": ["codex", "cli", "delegation", "mycodex"],
+  "category": "developer-tools"
+}

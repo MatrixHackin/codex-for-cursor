@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "node ./scripts/hooks/session-start.mjs"
+      }
+    ],
+    "sessionEnd": [
+      {
+        "command": "node ./scripts/hooks/session-end.mjs"
+      }
+    ]
+  }
+}
