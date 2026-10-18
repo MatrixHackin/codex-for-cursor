@@ -20,17 +20,17 @@ async function readStdin() {
   return Buffer.concat(chunks).toString("utf8");
 }
 
+if (argv.includes("--version")) {
+  process.stdout.write("codex-cli 0.0.0-mycodex-fake\n");
+  process.exit(0);
+}
+
 if (recordDir) {
   mkdirSync(recordDir, { recursive: true });
   writeFileSync(
     join(recordDir, `invoke-${Date.now()}-${process.pid}.json`),
     `${JSON.stringify({ argv, cwd: process.cwd(), pid: process.pid }, null, 2)}\n`,
   );
-}
-
-if (argv.includes("--version")) {
-  process.stdout.write("codex-cli 0.0.0-mycodex-fake\n");
-  process.exit(0);
 }
 
 if (argv.includes("--last")) {

@@ -34,7 +34,7 @@ test("status/result/cancel follow the job state machine", async () => {
     assert.equal(earlyResult.json.code, "JOB_NOT_DONE");
 
     const waited = await companion(
-      ["status", ...base(ws, dataDir), started.json.id, "--wait", "--timeout-ms", "5000"],
+      ["status", ...base(ws, dataDir), "--wait", "--timeout-ms", "5000", started.json.id],
       { cwd: ws },
     );
     assert.equal(waited.json.status, "completed", waited.stdout);
