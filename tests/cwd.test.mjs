@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { realpathSync } from "node:fs";
 import { mkdir } from "node:fs/promises";
 import { join } from "node:path";
 import { test } from "node:test";
@@ -60,6 +61,7 @@ test("allows a relative cwd inside the workspace", async () => {
     );
     assert.equal(result.code, 0, result.stderr + result.stdout);
     assert.equal(result.json.status, "completed");
-    assert.equal(result.json.cwd, join(ws, "src"));
+    // macOS tmpdir is /var/folders/... which realpath's to /private/var/folders/...
+    assert.equal(result.json.cwd, realpathSync(join(ws, "src")));
   });
 });
