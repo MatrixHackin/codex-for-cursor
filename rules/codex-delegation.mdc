@@ -1,0 +1,13 @@
+---
+description: Delegate /mycodex tasks to the local Codex CLI; receipts are not completed work.
+alwaysApply: true
+---
+
+When the user invokes `/mycodex:run`, `/mycodex:review`, `/mycodex:setup`, `/mycodex:status`, `/mycodex:result`, or `/mycodex:cancel`:
+
+- Call the MyCodex companion (`scripts/codex-run.mjs`) via Shell. Do not implement the coding task yourself.
+- A JSON receipt (`kind: "receipt"`) means the job started. It is not the finished result.
+- Do not add `--model` or `--effort` unless the user wrote them.
+- Do not run `codex exec resume --last`.
+- A write job owns the files it is changing; do not edit those files in parallel.
+- Review is read-only and may run beside a write job. Do not treat review findings as applied changes.

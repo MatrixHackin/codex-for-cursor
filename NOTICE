@@ -1,0 +1,9 @@
+MyCodex (Cursor plugin)
+Copyright 2026 MyCodex contributors
+
+This product is an independent integration. It is not affiliated with, sponsored
+by, or endorsed by OpenAI or Cursor (Anysphere).
+
+Design of the slash-command surface and local-CLI delegation is informed by the
+public documentation and architecture of openai/codex-plugin-cc (Apache-2.0).
+No source files from that project are copied into this repository.
